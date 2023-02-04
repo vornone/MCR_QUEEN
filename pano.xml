@@ -221,7 +221,7 @@
       <polystyle backgroundalpha="0.25098" handcursor="1" borderalpha="1" backgroundcolor="0xafafaf" bordercolor="0xffffff" mode="2"/>
       <hotspot tilt="-19.54" target="" title="GF_WALKWAY_CM002" pan="-352.88" id="Point01" url="{node144}" description="" skinid="dark_final interactive"/>
       <hotspot tilt="5.82" target="" title="FIRSTFLOOR" pan="-314.74" id="Point02" url="{node122}" description="" skinid="GF_TO_1F"/>
-      <hotspot tilt="10.4" target="" title="GF_ENTRANCE_CM001" pan="-92.88" id="Point03" url="{node135}" description="" skinid="ht_node"/>
+      <hotspot tilt="10.4" target="" title="GF_ENTRANCE_CM001" pan="-92.88" id="Point03" url="{node135}" description="" skinid="final_interactive"/>
       <polyhotspot target="" title="GF_ENTRANCE_CM001" id="Poly01" url="{node135}" description="">
         <polystring>-76.51/24.17|-109.64/23.45|-109.7/-23.85|-76.58/-24.54</polystring>
       </polyhotspot>
@@ -850,7 +850,7 @@
       <hotspot tilt="-1.46" target="" title="SECONDFLOOR" pan="-225.77" id="Point01" url="{node116}" description="" skinid="final_interactive"/>
       <hotspot tilt="-1.39" target="" title="2F_FRONTBATHROOM2ND" pan="-243.49" id="Point02" url="{node113}" description="" skinid="final_interactive"/>
       <hotspot tilt="-2.01" target="" title="2F_FRONTWARDROBE" pan="-201.35" id="Point03" url="{node117}" description="" skinid="final_interactive"/>
-      <hotspot tilt="-1.88" target="" title="2F_BALCONYFRONT" pan="-159.16" id="Point04" url="{node112}" description="" skinid="ht_node"/>
+      <hotspot tilt="-1.88" target="" title="2F_BALCONYFRONT" pan="-159.16" id="Point04" url="{node112}" description="" skinid="final_interactive"/>
     </hotspots>
     <media/>
     <transition zoomafterinfov="90" zoomout="0" blendtime="1" zoomafteroutfov="20" softedge="0" type="crossdissolve" zoomin="0" zoomspeed="1" zoomoutpause="1" blendcolor="0x000000" enabled="1" zoomfov="20"/>
