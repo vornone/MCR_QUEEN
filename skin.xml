@@ -4417,7 +4417,29 @@
             <action>
               <source>click</source>
               <type>tooglefullscreen</type>
-              <actiontransitiontime>3801155</actiontransitiontime>
+              <actiontransitiontime>0</actiontransitiontime>
+              <filterexpression>
+                <condition>
+                  <logictrigger>os</logictrigger>
+                  <logiccomparison>notequal</logiccomparison>
+                  <comparevalue>4</comparevalue>
+                  <logicoperator>and</logicoperator>
+                </condition>
+              </filterexpression>
+            </action>
+            <action>
+              <source>click</source>
+              <type>gotourl</type>
+              <actionvalue>https://vornone.github.io/MCR_QUEEN/</actionvalue>
+              <actiontransitiontime>0</actiontransitiontime>
+              <filterexpression>
+                <condition>
+                  <logictrigger>os</logictrigger>
+                  <logiccomparison>equal</logiccomparison>
+                  <comparevalue>4</comparevalue>
+                  <logicoperator>and</logicoperator>
+                </condition>
+              </filterexpression>
             </action>
             <logicblock>
               <logicproperty>visible</logicproperty>
@@ -4584,7 +4606,7 @@
               <source>click</source>
               <type>gotourl</type>
               <actionvalue>https://vornone.github.io/MCR_QUEEN/</actionvalue>
-              <actiontransitiontime>-15975552</actiontransitiontime>
+              <actiontransitiontime>64</actiontransitiontime>
               <filterexpression>
                 <condition>
                   <logictrigger>os</logictrigger>
