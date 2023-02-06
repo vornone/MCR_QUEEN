@@ -4619,12 +4619,6 @@
                   <logicoperator>and</logicoperator>
                 </condition>
                 <condition>
-                  <logictrigger>ismobile</logictrigger>
-                  <logiccomparison>equal</logiccomparison>
-                  <comparevalue>true</comparevalue>
-                  <logicoperator>and</logicoperator>
-                </condition>
-                <condition>
                   <logictrigger>hastouch</logictrigger>
                   <logiccomparison>equal</logiccomparison>
                   <comparevalue>true</comparevalue>
@@ -4670,12 +4664,6 @@
                   <newvalue>true</newvalue>
                   <condition>
                     <logictrigger>hastouch</logictrigger>
-                    <logiccomparison>equal</logiccomparison>
-                    <comparevalue>true</comparevalue>
-                    <logicoperator>and</logicoperator>
-                  </condition>
-                  <condition>
-                    <logictrigger>ismobile</logictrigger>
                     <logiccomparison>equal</logiccomparison>
                     <comparevalue>true</comparevalue>
                     <logicoperator>and</logicoperator>
