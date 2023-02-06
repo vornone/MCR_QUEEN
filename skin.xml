@@ -3695,6 +3695,21 @@
         <actiontransitiontime>71452640</actiontransitiontime>
       </action>
       <logicblock>
+        <logicproperty>alpha</logicproperty>
+        <transitionenabled>1</transitionenabled>
+        <transitiontime>500</transitiontime>
+        <expression>
+          <newvalue>0</newvalue>
+          <condition>
+            <logictrigger>variable</logictrigger>
+            <logiccomparison>equal</logiccomparison>
+            <comparevalue>true</comparevalue>
+            <logicoperator>and</logicoperator>
+            <variablename>vis_auto_hide_controller</variablename>
+          </condition>
+        </expression>
+      </logicblock>
+      <logicblock>
         <logicproperty>position</logicproperty>
         <transitionenabled>0</transitionenabled>
         <transitiontime>1000</transitiontime>
@@ -3718,13 +3733,13 @@
           <condition>
             <logictrigger>ismobile</logictrigger>
             <logiccomparison>equal</logiccomparison>
-            <comparevalue>true</comparevalue>
+            <comparevalue>false</comparevalue>
             <logicoperator>and</logicoperator>
           </condition>
           <condition>
             <logictrigger>hastouch</logictrigger>
             <logiccomparison>equal</logiccomparison>
-            <comparevalue>true</comparevalue>
+            <comparevalue>false</comparevalue>
             <logicoperator>and</logicoperator>
           </condition>
           <condition>
@@ -3741,21 +3756,6 @@
             <logiccomparison>lowerequal</logiccomparison>
             <comparevalue>800</comparevalue>
             <logicoperator>and</logicoperator>
-          </condition>
-        </expression>
-      </logicblock>
-      <logicblock>
-        <logicproperty>alpha</logicproperty>
-        <transitionenabled>1</transitionenabled>
-        <transitiontime>500</transitiontime>
-        <expression>
-          <newvalue>0</newvalue>
-          <condition>
-            <logictrigger>variable</logictrigger>
-            <logiccomparison>equal</logiccomparison>
-            <comparevalue>true</comparevalue>
-            <logicoperator>and</logicoperator>
-            <variablename>vis_auto_hide_controller</variablename>
           </condition>
         </expression>
       </logicblock>
@@ -4583,8 +4583,8 @@
             <action>
               <source>click</source>
               <type>gotourl</type>
-              <actionvalue>https://vornone.github.io/MCR_PRINCE/</actionvalue>
-              <actiontransitiontime>64</actiontransitiontime>
+              <actionvalue>https://vornone.github.io/MCR_QUEEN/</actionvalue>
+              <actiontransitiontime>0</actiontransitiontime>
               <filterexpression>
                 <condition>
                   <logictrigger>os</logictrigger>
@@ -4646,7 +4646,7 @@
               <angle>0</angle>
               <scalex>1</scalex>
               <scaley>1</scaley>
-              <visible>1</visible>
+              <visible>0</visible>
               <center>4</center>
               <width>32</width>
               <height>32</height>
@@ -4662,6 +4662,32 @@
               <guihide>0</guihide>
               <guitreeclose>0</guitreeclose>
               <guilock>0</guilock>
+              <logicblock>
+                <logicproperty>visible</logicproperty>
+                <transitionenabled>0</transitionenabled>
+                <transitiontime>1000</transitiontime>
+                <expression>
+                  <newvalue>true</newvalue>
+                  <condition>
+                    <logictrigger>hastouch</logictrigger>
+                    <logiccomparison>equal</logiccomparison>
+                    <comparevalue>true</comparevalue>
+                    <logicoperator>and</logicoperator>
+                  </condition>
+                  <condition>
+                    <logictrigger>ismobile</logictrigger>
+                    <logiccomparison>equal</logiccomparison>
+                    <comparevalue>true</comparevalue>
+                    <logicoperator>and</logicoperator>
+                  </condition>
+                  <condition>
+                    <logictrigger>os</logictrigger>
+                    <logiccomparison>equal</logiccomparison>
+                    <comparevalue>4</comparevalue>
+                    <logicoperator>and</logicoperator>
+                  </condition>
+                </expression>
+              </logicblock>
               <usewidthcss>0</usewidthcss>
               <useheightcss>0</useheightcss>
               <wunit>pixels</wunit>
