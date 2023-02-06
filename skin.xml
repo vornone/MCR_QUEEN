@@ -3757,6 +3757,12 @@
             <comparevalue>800</comparevalue>
             <logicoperator>and</logicoperator>
           </condition>
+          <condition>
+            <logictrigger>hastouch</logictrigger>
+            <logiccomparison>equal</logiccomparison>
+            <comparevalue>true</comparevalue>
+            <logicoperator>and</logicoperator>
+          </condition>
         </expression>
       </logicblock>
       <element>
@@ -3996,12 +4002,6 @@
               <logictrigger>fullscreen</logictrigger>
               <logiccomparison>equal</logiccomparison>
               <comparevalue>true</comparevalue>
-              <logicoperator>and</logicoperator>
-            </condition>
-            <condition>
-              <logictrigger>ismobile</logictrigger>
-              <logiccomparison>equal</logiccomparison>
-              <comparevalue>false</comparevalue>
               <logicoperator>and</logicoperator>
             </condition>
             <condition>
@@ -4584,18 +4584,12 @@
               <source>click</source>
               <type>gotourl</type>
               <actionvalue>https://vornone.github.io/MCR_QUEEN/</actionvalue>
-              <actiontransitiontime>0</actiontransitiontime>
+              <actiontransitiontime>-15975552</actiontransitiontime>
               <filterexpression>
                 <condition>
                   <logictrigger>os</logictrigger>
                   <logiccomparison>equal</logiccomparison>
                   <comparevalue>4</comparevalue>
-                  <logicoperator>and</logicoperator>
-                </condition>
-                <condition>
-                  <logictrigger>ismobile</logictrigger>
-                  <logiccomparison>equal</logiccomparison>
-                  <comparevalue>true</comparevalue>
                   <logicoperator>and</logicoperator>
                 </condition>
                 <condition>
@@ -4640,7 +4634,7 @@
               <angle>0</angle>
               <scalex>1</scalex>
               <scaley>1</scaley>
-              <visible>0</visible>
+              <visible>1</visible>
               <center>4</center>
               <width>32</width>
               <height>32</height>
@@ -4656,26 +4650,6 @@
               <guihide>0</guihide>
               <guitreeclose>0</guitreeclose>
               <guilock>0</guilock>
-              <logicblock>
-                <logicproperty>visible</logicproperty>
-                <transitionenabled>0</transitionenabled>
-                <transitiontime>1000</transitiontime>
-                <expression>
-                  <newvalue>true</newvalue>
-                  <condition>
-                    <logictrigger>hastouch</logictrigger>
-                    <logiccomparison>equal</logiccomparison>
-                    <comparevalue>true</comparevalue>
-                    <logicoperator>and</logicoperator>
-                  </condition>
-                  <condition>
-                    <logictrigger>os</logictrigger>
-                    <logiccomparison>equal</logiccomparison>
-                    <comparevalue>4</comparevalue>
-                    <logicoperator>and</logicoperator>
-                  </condition>
-                </expression>
-              </logicblock>
               <usewidthcss>0</usewidthcss>
               <useheightcss>0</useheightcss>
               <wunit>pixels</wunit>

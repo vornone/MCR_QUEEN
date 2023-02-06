@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 6.1.10/18007
 // Filename: MCR_UI_TEST_05.ggsk
-// Generated 2023-02-06T15:56:33
+// Generated 2023-02-06T16:12:43
 
 function pano2vrSkin(player,base) {
 	player.addVariable('opt_hotspot_preview', 2, true);
@@ -543,7 +543,8 @@ function pano2vrSkin(player,base) {
 				newLogicStatePosition = 1;
 			}
 			else if (
-				((player.getViewerSize().height <= 800))
+				((player.getViewerSize().height <= 800)) && 
+				((player.getHasTouch() == true))
 			)
 			{
 				newLogicStatePosition = 2;
@@ -776,7 +777,6 @@ function pano2vrSkin(player,base) {
 			}
 			else if (
 				((player.getIsFullscreen() == true)) && 
-				((player.getIsMobile() == false)) && 
 				((player.getHasTouch() == false))
 			)
 			{
@@ -1209,7 +1209,6 @@ function pano2vrSkin(player,base) {
 			if (
 				(
 					((player.getOS() == 4)) && 
-					((player.getIsMobile() == true)) && 
 					((player.getHasTouch() == true))
 				)
 			) {
@@ -1261,7 +1260,7 @@ function pano2vrSkin(player,base) {
 		me._go_url__img.ggOverSrc=hs;
 		el.ggId="go_url";
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1 };
-		el.ggVisible=false;
+		el.ggVisible=true;
 		el.className="ggskin ggskin_button ";
 		el.ggType='button';
 		hs ='';
@@ -1270,7 +1269,7 @@ function pano2vrSkin(player,base) {
 		hs+='left : 0px;';
 		hs+='position : absolute;';
 		hs+='top : 0px;';
-		hs+='visibility : hidden;';
+		hs+='visibility : inherit;';
 		hs+='width : 32px;';
 		hs+='pointer-events:auto;';
 		el.setAttribute('style',hs);
@@ -1286,31 +1285,6 @@ function pano2vrSkin(player,base) {
 				return this.parentNode.ggElementNodeId();
 			}
 			return player.getCurrentNode();
-		}
-		me._go_url.logicBlock_visible = function() {
-			var newLogicStateVisible;
-			if (
-				((player.getHasTouch() == true)) && 
-				((player.getOS() == 4))
-			)
-			{
-				newLogicStateVisible = 0;
-			}
-			else {
-				newLogicStateVisible = -1;
-			}
-			if (me._go_url.ggCurrentLogicStateVisible != newLogicStateVisible) {
-				me._go_url.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._go_url.style[domTransition]='';
-				if (me._go_url.ggCurrentLogicStateVisible == 0) {
-					me._go_url.style.visibility=(Number(me._go_url.style.opacity)>0||!me._go_url.style.opacity)?'inherit':'hidden';
-					me._go_url.ggVisible=true;
-				}
-				else {
-					me._go_url.style.visibility="hidden";
-					me._go_url.ggVisible=false;
-				}
-			}
 		}
 		me._go_url.onmouseover=function (e) {
 			me._go_url__img.src=me._go_url__img.ggOverSrc;
@@ -8694,7 +8668,7 @@ function pano2vrSkin(player,base) {
 		els=me._config_button__img=document.createElement('img');
 		els.className='ggskin ggskin_config_button';
 		hs='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QHTaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA1LjYuMCI+CiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgIHhtcDpNZXRhZGF0YURhdGU9IjIwMj'+
-			'MtMDItMDZUMTU6NTY6MzMrMDc6MDAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAyLTA2VDE1OjU2OjMzKzA3OjAwIgogICB4bXA6Q3JlYXRvclRvb2w9IlBhbm8yVlIgNi4xLjEwIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+/9sAQwD//////////////////////////////////////////////////////////////////////////////////////9sAQwH//////////////////////////////////////////////////////////////////////////////////////8AAEQgAHQAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYH'+
+			'MtMDItMDZUMTY6MTI6NDMrMDc6MDAiCiAgIHhtcDpNb2RpZnlEYXRlPSIyMDIzLTAyLTA2VDE2OjEyOjQzKzA3OjAwIgogICB4bXA6Q3JlYXRvclRvb2w9IlBhbm8yVlIgNi4xLjEwIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+/9sAQwD//////////////////////////////////////////////////////////////////////////////////////9sAQwH//////////////////////////////////////////////////////////////////////////////////////8AAEQgAHQAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYH'+
 			'CAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4'+
 			'iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8ASigUetABj3oo7UlACiikooAXtSUUUAf/2Q==';
 		els.setAttribute('src',hs);
@@ -28424,18 +28398,17 @@ function pano2vrSkin(player,base) {
 	me._close.logicBlock_visible();
 	me._tool_tip.logicBlock_visible();
 	me._ios_url.logicBlock_visible();
-	me._go_url.logicBlock_visible();
 	player.addListener('sizechanged', function(args) { me._screentint.logicBlock_alpha();me._screentint02.logicBlock_alpha();me._show_controller_button.logicBlock_position();me._thumbnail_hide_button_show.logicBlock_alpha();me._thumbnail_show_button_show.logicBlock_alpha();me._thumbnail_menu.logicBlock_visible();me._thumbnail_menu.logicBlock_alpha();me._thumbnail_menu_mobile.logicBlock_visible();me._thumbnail_menu_mobile.logicBlock_alpha();me._map_01.logicBlock_position();me._map_01.logicBlock_size();me._closeminimap.logicBlock_position();me._map_02.logicBlock_size();me._closeminimap02.logicBlock_position();me._closeminimap03.logicBlock_position(); });
 	player.addListener('tilesready', function(args) { me._loading_multires.logicBlock_visible(); });
 	player.addListener('tilesrequested', function(args) { me._loading_multires.logicBlock_visible(); });
 	player.addListener('fullscreenenter', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._fullscreen.logicBlock_alpha();me._fullscreen_off.logicBlock_alpha(); });
 	player.addListener('fullscreenexit', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._fullscreen.logicBlock_alpha();me._fullscreen_off.logicBlock_alpha(); });
 	player.addListener('changenode', function(args) { me._loading_multires.logicBlock_visible();me._screentint.logicBlock_alpha();me._screentint02.logicBlock_alpha();me._show_controller_button.logicBlock_alpha();me._hide_controller_container.logicBlock_alpha();me._controller.logicBlock_position();me._controller_slider.logicBlock_alpha();me._fullscreen_buttons.logicBlock_visible();me._gyro.logicBlock_visible();me._gyro_off.logicBlock_alpha();me._gyro_on.logicBlock_alpha();me._thumbnail.logicBlock_visible();me._thumbnail_hide_button_show.logicBlock_alpha();me._thumbnail_show_button_show.logicBlock_alpha();me._stop_rotate_image.logicBlock_visible();me._start_rotate_image.logicBlock_visible();me._thumbnail_menu.logicBlock_position();me._thumbnail_menu.logicBlock_visible();me._thumbnail_menu.logicBlock_alpha();me._thumbnail_menu_mobile.logicBlock_position();me._thumbnail_menu_mobile.logicBlock_visible();me._thumbnail_menu_mobile.logicBlock_alpha();me._loading.logicBlock_visible();me._web_page.logicBlock_visible();me._userdata.logicBlock_visible();me._information.logicBlock_visible();me._image_popup.logicBlock_visible();me._popup_image.logicBlock_visible();me._video_popup_file.logicBlock_visible();me._popup_video_file.logicBlock_visible();me._video_popup_controls_file.logicBlock_visible();me._video_popup_url.logicBlock_visible();me._popup_video_url.logicBlock_visible();me._video_popup_controls_url.logicBlock_visible();me._video_popup_vimeo.logicBlock_visible();me._popup_video_vimeo.logicBlock_visible();me._video_popup_youtube.logicBlock_visible();me._popup_video_youtube.logicBlock_visible();me.__360image_gyro.logicBlock_visible();me.__360image.logicBlock_position();me.__360image.logicBlock_scaling();me._phone2.logicBlock_scaling();me._phone3.logicBlock_scaling();me._close.logicBlock_visible();me._tool_tip.logicBlock_visible(); });
-	player.addListener('configloaded', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._fullscreen_buttons.logicBlock_visible();me._ios_url.logicBlock_visible();me._go_url.logicBlock_visible();me._gyro.logicBlock_visible();me._thumbnail.logicBlock_visible();me._thumbnail_menu.logicBlock_visible();me._thumbnail_menu_mobile.logicBlock_visible();me.__360image_gyro.logicBlock_visible(); });
+	player.addListener('configloaded', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._fullscreen_buttons.logicBlock_visible();me._ios_url.logicBlock_visible();me._gyro.logicBlock_visible();me._thumbnail.logicBlock_visible();me._thumbnail_menu.logicBlock_visible();me._thumbnail_menu_mobile.logicBlock_visible();me.__360image_gyro.logicBlock_visible(); });
 	player.addListener('autorotatechanged', function(args) { me._stop_rotate_image.logicBlock_visible();me._start_rotate_image.logicBlock_visible(); });
 	player.addListener('gyroavailable', function(args) { me._gyro.logicBlock_visible(); });
 	player.addListener('gyrochanged', function(args) { me._gyro_off.logicBlock_alpha();me._gyro_on.logicBlock_alpha(); });
-	player.addListener('hastouch', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._ios_url.logicBlock_visible();me._go_url.logicBlock_visible();me.__360image_gyro.logicBlock_visible(); });
+	player.addListener('hastouch', function(args) { me._show_controller_button.logicBlock_position();me._controller.logicBlock_position();me._ios_url.logicBlock_visible();me.__360image_gyro.logicBlock_visible(); });
 	player.addListener('activehotspotchanged', function(args) { me._tool_tip.logicBlock_visible(); });
 	player.addListener('varchanged_vis_userdata', function(args) { me._screentint.logicBlock_alpha();me._screentint02.logicBlock_alpha();me._controller.logicBlock_position();me._thumbnail_menu.logicBlock_position();me._thumbnail_menu_mobile.logicBlock_position();me._userdata.logicBlock_visible(); });
 	player.addListener('varchanged_vis_image_popup', function(args) { me._screentint.logicBlock_alpha();me._screentint02.logicBlock_alpha();me._controller.logicBlock_position();me._thumbnail_menu.logicBlock_position();me._image_popup.logicBlock_visible();me._popup_image.logicBlock_visible();me._close.logicBlock_visible(); });
